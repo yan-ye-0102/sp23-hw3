@@ -20,7 +20,7 @@ def main():
     build_env = env_builder(
         "FrozenLake-v1", {"map_name": map_name, "is_slippery": is_slippery}
     )
-    agent = agents.RandomAgent(build_env, params)
+    agent = agents.QLearningAgent(build_env, params)
     agent.run(10000, 100, True)
     eval_res = agent.run(100, 100, False)
     total = sum(list(eval_res.values()))
